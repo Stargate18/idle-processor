@@ -1,0 +1,214 @@
+<html>
+	<head>
+		<title> Idle Processor </title>
+		<link rel="stylesheet" type="text/css" href="interface.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> 
+	</head>
+	<body>
+		Year - <span id="yearDisplay">0</span>
+		<br />
+		<span id="workDisplay">0</span> calculations remaining this year.
+		<br />
+		Budget - £<span id="moneyDisplay">0</span>
+		<br />
+		QBITS: <span id="qbitDisplay">0</span>
+		<br />
+		<br />
+		<span id="powerDisplay">0</span> instructions calculated per second. (Theoretical maximum of <span id="actualPowerDisplay">0</span> per second.)
+		<br />
+		<span id="storedDisplay">0</span>/<span id="storageDisplay">0</span> future instructions stored. (<span id="networkDisplay">0</span> received per second)
+		<br />
+		<br />
+		<span id="spaceDisplay">0</span>/<span id="maxSpaceDisplay">0</span>cm³ of space used.
+		<br />
+		<button onclick="saveGame()">SAVE</button>
+		<button onclick="loadGame()">LOAD</button>
+		<div class="tab">
+		  <button class="tablinks" onclick="mainTabs(event, 'Shop')">Shop</button>
+		  <button class="tablinks" onclick="mainTabs(event, 'Upgrades')">Upgrades</button>
+		  <button class="tablinks" onclick="mainTabs(event, 'Quantum')">Quantum</button>
+		  <button id="temporaltab" class="tablinks" onclick="mainTabs(event, 'Temporal')">Temporal</button>
+		</div>
+		<div id="Shop" class="tabcontent">
+			<table style="width:70%" id="purchases">
+				<tr>
+					<th>Name</th>
+					<th>Cost</th>
+					<th>Power</th>
+					<th>Storage</th>
+					<th>Network</th>
+					<th>Size</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</table>
+		</div>
+		<div id="Upgrades" class="tabcontent">
+			<table style="width:50%" id="upgrades">
+				<tr>
+					<th>Money Multiplier<br><span id="upgrade10Display">10</span>%</th>
+					<th>Power Multiplier<br><span id="upgrade20Display">10</span>%</th>
+					<th>Storage Multiplier<br><span id="upgrade30Display">10</span>%</th>
+					<th>Network Multiplier<br><span id="upgrade40Display">10</span>%</th>
+				</tr>
+				<tr>
+					<th>Revenue Enhancement<br>Level <span id="upgrade11Owned">0</span>/5</th>
+					<th>Efficent Processing<br>Level <span id="upgrade21Owned">0</span>/5</th>
+					<th>Program Compression<br>Level <span id="upgrade31Owned">0</span>/5</th>
+					<th>Redundant Connections<br>Level <span id="upgrade41Owned">0</span>/5</th>
+				</tr>
+				<tr>
+					<td>Increase money multiplier by <span id="upgrade11Display">10</span>% (multiplicative)</td>
+					<td>Increase power multiplier by <span id="upgrade21Display">10</span>% (multiplicative)</td>
+					<td>Increase storage multiplier by <span id="upgrade31Display">10</span>% (multiplicative)</td>
+					<td>Increase network multiplier by <span id="upgrade41Display">10</span>% (multiplicative)</td>
+				</tr>
+				<tr>
+					<td><button id="upgrade11button" onclick="buyUpgrade(11)"> BUY (£<span id="upgrade11Cost">0</span>)</button></td>
+					<td><button id="upgrade21button" onclick="buyUpgrade(21)"> BUY (£<span id="upgrade21Cost">0</span>)</button></td>
+					<td><button id="upgrade31button" onclick="buyUpgrade(31)"> BUY (£<span id="upgrade31Cost">0</span>)</button></td>
+					<td><button id="upgrade41button" onclick="buyUpgrade(41)"> BUY (£<span id="upgrade41Cost">0</span>)</button></td>
+				</tr>
+				<tr class="upgrade2">
+					<th>Mid-File Advertising<br>Level <span id="upgrade12Owned">0</span>/5</th>
+					<th>Overclocking<br>Level <span id="upgrade22Owned">0</span>/5</th>
+					<th>Additional Memory<br>Level <span id="upgrade32Owned">0</span>/5</th>
+					<th>Connection Algorithm<br>Level <span id="upgrade42Owned">0</span>/5</th>
+				</tr>
+				<tr class="upgrade2">
+					<td>Increase effectiveness of Revenue Enhancement by <span id="upgrade12Display">10</span>% (multiplicative)</td>
+					<td>Increase effectiveness of Efficent Programing by <span id="upgrade22Display">10</span>% (multiplicative)</td>
+					<td>Increase effectiveness of Program Compression by <span id="upgrade32Display">10</span>% (multiplicative)</td>
+					<td>Increase effectiveness of Redundant Connections by <span id="upgrade42Display">10</span>% (multiplicative)</td>
+				</tr>
+				<tr class="upgrade2">
+					<td><button id="upgrade12button" onclick="buyUpgrade(12)"> BUY (£<span id="upgrade12Cost">0</span>)</button></td>
+					<td><button id="upgrade22button" onclick="buyUpgrade(22)"> BUY (£<span id="upgrade22Cost">0</span>)</button></td>
+					<td><button id="upgrade32button" onclick="buyUpgrade(32)"> BUY (£<span id="upgrade32Cost">0</span>)</button></td>
+					<td><button id="upgrade42button" onclick="buyUpgrade(42)"> BUY (£<span id="upgrade42Cost">0</span>)</button></td>
+				</tr>
+				<tr class="upgrade3">
+					<th>Recycled Paper<br>Level <span id="upgrade13Owned">0</span>/5</th>
+					<th>Liquid Cooling<br>Level <span id="upgrade23Owned">0</span>/5</th>
+					<th>Redundant Disks<br>Level <span id="upgrade33Owned">0</span>/5</th>
+					<th>Noise Reduction<br>Level <span id="upgrade43Owned">0</span>/5</th>
+				</tr>
+				<tr class="upgrade3">
+					<td>Increase effectiveness of Mid-File Advertising by <span id="upgrade13Display">10</span>% (multiplicative)</td>
+					<td>Increase effectiveness of Overclocking by <span id="upgrade23Display">10</span>% (multiplicative)</td>
+					<td>Increase effectiveness of Additional Memory by <span id="upgrade33Display">10</span>% (multiplicative)</td>
+					<td>Increase effectiveness of Connection Algorithm by <span id="upgrade43Display">10</span>% (multiplicative)</td>
+				</tr>
+				<tr class="upgrade3">
+					<td><button id="upgrade13button" onclick="buyUpgrade(13)"> BUY (£<span id="upgrade13Cost">0</span>)</button></td>
+					<td><button id="upgrade23button" onclick="buyUpgrade(23)"> BUY (£<span id="upgrade23Cost">0</span>)</button></td>
+					<td><button id="upgrade33button" onclick="buyUpgrade(33)"> BUY (£<span id="upgrade33Cost">0</span>)</button></td>
+					<td><button id="upgrade43button" onclick="buyUpgrade(43)"> BUY (£<span id="upgrade43Cost">0</span>)</button></td>
+				</tr>
+				<tr class="upgrade4">
+					<th>Format Microtransactions<br>Level <span id="upgrade14Owned">0</span>/5</th>
+					<th>Cloud Computing<br>Level <span id="upgrade24Owned">0</span>/5</th>
+					<th>Offsite Backups<br>Level <span id="upgrade34Owned">0</span>/5</th>
+					<th>Direct Portal<br>Level <span id="upgrade44Owned">0</span>/5</th>
+				</tr>
+				<tr class="upgrade4">
+					<td>Increase effectiveness of Recycled Paper by 10% (multiplicative)</td>
+					<td>Increase effectiveness of Liquid Cooling by 10% (multiplicative)</td>
+					<td>Increase effectiveness of Redundant Disks by 10% (multiplicative)</td>
+					<td>Increase effectiveness of Noise Reduction by 10% (multiplicative)</td>
+				</tr>
+				<tr class="upgrade4">
+					<td><button id="upgrade14button" onclick="buyUpgrade(14)"> BUY (£<span id="upgrade14Cost">0</span>)</button></td>
+					<td><button id="upgrade24button" onclick="buyUpgrade(24)"> BUY (£<span id="upgrade24Cost">0</span>)</button></td>
+					<td><button id="upgrade34button" onclick="buyUpgrade(34)"> BUY (£<span id="upgrade34Cost">0</span>)</button></td>
+					<td><button id="upgrade44button" onclick="buyUpgrade(44)"> BUY (£<span id="upgrade44Cost">0</span>)</button></td>
+				</tr>
+			</table>
+		</div>
+		<div id="Quantum" class="tabcontent">
+			Your QBITS are shrinking components to <span id="qmultiDisplay">0</span>% of their original size.
+			<br>
+			<br>
+			<button onclick="quantumReset()">Quantum Reset (Gain <span id="qbitGainDisplay">0</span> QBITS (based on years progressed and current specs)</button>
+			<br>
+			<br>
+			<table id="qupgrades" width="80%">
+				<tr>
+					<th width="10%">Unlock Era 2</th>
+					<th width="10%">Unlock Era 3</th>
+					<th width="10%">Unlock Era 4</th>
+					<th width="10%">Unlock Era 5</th>
+					<th width="10%">Unlock Era 6</th>
+				</tr>			
+				<tr>
+					<td width="10%">Unlock the next tier of purchases and extend the max year by 15.</td>
+					<td width="10%">Unlock the next tier of purchases and extend the max year by 15.</td>
+					<td width="10%">Unlock the next tier of purchases and extend the max year by 15.</td>
+					<td width="10%">Unlock the next tier of purchases and extend the max year by 15.</td>
+					<td width="10%">Unlock the next tier of purchases and extend the max year by 15.</td>
+				</tr>
+				<tr>
+					<td><button id="qUpgrade1" onclick="qUpgrade(1)"> BUY (1000 QBITS)</button></td>
+					<td><button id="qUpgrade2" onclick="qUpgrade(2)"> BUY (5000 QBITS)</button></td>
+					<td><button id="qUpgrade3" onclick="qUpgrade(3)"> BUY (25000 QBITS)</button></td>
+					<td><button id="qUpgrade4" onclick="qUpgrade(4)"> BUY (125000 QBITS)</button></td>
+					<td><button id="qUpgrade5" onclick="qUpgrade(5)"> BUY (625000 QBITS)</button></td>
+				</tr>
+				<tr>
+					<th width="10%">Unlock Temporal Maths</th>
+					<th width="10%">Unlock T2 Upgrades</th>
+					<th width="10%">Unlock T3 Upgrades</th>
+					<th width="10%">Unlock T4 Upgrades</th>
+					<th width="10%">Win!</th>
+				</tr>			
+				<tr>
+					<td width="10%">Unlock a set of upgrades improving the gamespeed.</td>
+					<td width="10%">Unlock the next tier of upgrades.</td>
+					<td width="10%">Unlock the next tier of upgrades.</td>
+					<td width="10%">Unlock the next tier of upgrades.</td>
+					<td width="10%">Win the game.</td>
+				</tr>
+				<tr>
+					<td><button id="qUpgrade6" onclick="qUpgrade(6)"> BUY (2000 QBITS)</button></td>
+					<td><button id="qUpgrade7" onclick="qUpgrade(7)"> BUY (10000 QBITS)</button></td>
+					<td><button id="qUpgrade8" onclick="qUpgrade(8)"> BUY (50000 QBITS)</button></td>
+					<td><button id="qUpgrade9" onclick="qUpgrade(9)"> BUY (250000 QBITS)</button></td>
+					<td><button id="qUpgrade10" onclick="qUpgrade(10)"> BUY (1250000 QBITS)</button></td>
+				</tr>
+			</table>
+		</div>
+		<div id="Temporal" class="tabcontent">
+			Current Temporal Multipler is 1x. Perform researches to improve them.
+			<table id="tupgrades" width="80%">
+				<tr>
+					<th width="10%">Temporal<br>Foundations</th>
+					<th width="10%">Temporal<br>Theory</th>
+					<th width="10%">Temporal<br>Algebra</th>
+					<th width="10%">Temporal<br>Combinatronics</th>
+					<th width="10%">Temporal<br>Geometry</th>
+					<th width="10%">Temporal<br>Topology</th>
+					<th width="10%">Temporal<br>Probability</th>
+				</tr>			
+				<tr>
+					<td width="10%">Increase TM<br>by x2.</td>
+					<td width="10%">Increase TM<br>by x3.</td>
+					<td width="10%">Increase TM<br>by x4.</td>
+					<td width="10%">Increase TM<br>by x6.</td>
+					<td width="10%">Increase TM<br>by x8.</td>
+					<td width="10%">Increase TM<br>by x10.</td>
+					<td width="10%">Increase TM<br>by x12.</td>
+				</tr>
+				<tr>
+					<td><button onclick="temporalUpgrade(1)"> BUY (<span id="upgradeT1Cost">0</span> QBITS)</button></td>
+					<td><button onclick="temporalUpgrade(2)"> BUY (<span id="upgradeT2Cost">0</span> QBITS)</button></td>
+					<td><button onclick="temporalUpgrade(3)"> BUY (<span id="upgradeT3Cost">0</span> QBITS)</button></td>
+					<td><button onclick="temporalUpgrade(4)"> BUY (<span id="upgradeT4Cost">0</span> QBITS)</button></td>
+					<td><button onclick="temporalUpgrade(5)"> BUY (<span id="upgradeT5Cost">0</span> QBITS)</button></td>
+					<td><button onclick="temporalUpgrade(6)"> BUY (<span id="upgradeT6Cost">0</span> QBITS)</button></td>
+					<td><button onclick="temporalUpgrade(7)"> BUY (<span id="upgradeT7Cost">0</span> QBITS)</button></td>
+				</tr>
+			</table>
+		</div>
+		<script type="text/javascript" src="code.js"></script>
+	</body>
+</html>

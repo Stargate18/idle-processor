@@ -1,0 +1,34 @@
+* {
+	background-color: #222222;
+	color: #DDDDDD;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 16px;
+}
+th, td {
+	text-align: left;
+}
+.tablinks {
+	background-color: #444444;
+	width: 20%;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	color: #DDDDDD;
+}
+.autobuttons {
+	background-color: #444444;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	color: #DDDDDD;
+}
+table {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#purchases {
+	font-size: 20px;
+}
