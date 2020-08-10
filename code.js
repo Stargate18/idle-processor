@@ -263,62 +263,62 @@ function temporalMultiCalculate(){
 function qUpgrade(type){
 	switch(type) {
 		case 1:
-			if(quantumUpgrades.era2 == 0 && money >= 1000){
-				money = money - 1000;
+			if(quantumUpgrades.era2 == 0 && qbits >= 1000){
+				qbits = qbits - 1000;
 				quantumUpgrades.era2 = 1;
 			};
 		break
 		case 2:
-			if(quantumUpgrades.era3 == 0 && money >= 5000){
-				money = money - 5000;
+			if(quantumUpgrades.era3 == 0 && qbits >= 5000){
+				qbits = qbits - 5000;
 				quantumUpgrades.era3 = 1
 			};
 		break
 		case 3:
-			if(quantumUpgrades.era4 == 0 && money >= 25000){
-				money = money - 25000;
+			if(quantumUpgrades.era4 == 0 && qbits >= 25000){
+				qbits = qbits - 25000;
 				quantumUpgrades.era4 = 1;
 			};
 		break
 		case 4:
-			if(quantumUpgrades.era5 == 0 && money >= 125000){
-				money = money - 125000;
+			if(quantumUpgrades.era5 == 0 && qbits >= 125000){
+				qbits = qbits - 125000;
 				quantumUpgrades.era5 = 1;
 			};
 		break
 		case 5:
-			if(quantumUpgrades.era6 == 0 && money >= 625000){
-				money = money - 625000;
+			if(quantumUpgrades.era6 == 0 && qbits >= 625000){
+				qbits = qbits - 625000;
 				quantumUpgrades.era6 = 1;
 			};
 		break
 		case 6:
-			if(quantumUpgrades.temporal == 0 && money >= 2000){
-				money = money - 2000;
+			if(quantumUpgrades.temporal == 0 && qbits >= 2000){
+				qbits = qbits - 2000;
 				quantumUpgrades.temporal = 1;
 			};
 		break
 		case 7:
-			if(quantumUpgrades.upgradet2 == 0 && money >= 10000){
-				money = money - 10000;
+			if(quantumUpgrades.upgradet2 == 0 && qbits >= 10000){
+				qbits = qbits - 10000;
 				quantumUpgrades.upgradet2 = 1;
 			};
 		break
 		case 8:
-			if(quantumUpgrades.upgradet3 == 0 && money >= 50000){
-				money = money - 50000;
+			if(quantumUpgrades.upgradet3 == 0 && qbits >= 50000){
+				qbits = qbits - 50000;
 				quantumUpgrades.upgradet3 = 1;
 			};
 		break
 		case 9:
-			if(quantumUpgrades.upgradet4 == 0 && money >= 250000){
-				money = money - 250000;
+			if(quantumUpgrades.upgradet4 == 0 && qbits >= 250000){
+				qbits = qbits - 250000;
 				quantumUpgrades.upgradet4 = 1;
 			};
 		break
 		case 10:
-			if(quantumUpgrades.endgame == 0 && money >= 1250000){
-				money = money - 1250000;
+			if(quantumUpgrades.endgame == 0 && qbits >= 1250000){
+				qbits = qbits - 1250000;
 				quantumUpgrades.endgame = 1;
 				alert("Congratulations! You beat the game in " + qresets + " quantum resets!")
 				document.getElementById("qUpgrade10").style.display = "none";
@@ -730,7 +730,7 @@ function progress(){
 	storage = 0;
 	network = 0;
 	spaceused = 0;
-	for (x of [C1A, C1B, C1C]) {
+	for (x of [C1A, C1B, C1C, C2A, C2B, C2C, C3A, C3B, C3C, C4A, C4B, C4C, C5A, C5B, C5C, C6A, C6B, C6C]) {
 		power = power + (x.power * x.owned);
 		storage = storage + (x.storage * x.owned);
 		network = network + (x.network * x.owned);
