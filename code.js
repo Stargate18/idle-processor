@@ -66,25 +66,25 @@ var C1A = new unit("C1A","Vacuum Tube Processor",10000,5,0,0,30000,0)
 var C1B = new unit("C1B","Punchcard Box",1000,0,16,0,10000,0)
 var C1C = new unit("C1C","Deliveryman",1000,0,0,4,10000,0)
 
-var C2A = new unit("C2A","Transistors Processor",10000,10,0,0,50000,0)
-var C2B = new unit("C2B","Ring Container",1000,0,32,0,20000,0)
-var C2C = new unit("C2C","Telegraph Machine",1000,0,0,8,20000,0)
+var C2A = new unit("C2A","Transistors Processor",15000,10,0,0,50000,0)
+var C2B = new unit("C2B","Ring Container",1500,0,32,0,20000,0)
+var C2C = new unit("C2C","Telegraph Machine",1500,0,0,8,20000,0)
 
-var C3A = new unit("C3A","Circuit Processor",10000,20,0,0,90000,0)
-var C3B = new unit("C3B","Floppy Rack",1000,0,48,0,30000,0)
-var C3C = new unit("C3C","Fax Machine",1000,0,0,12,30000,0)
+var C3A = new unit("C3A","Circuit Processor",20000,20,0,0,90000,0)
+var C3B = new unit("C3B","Floppy Rack",2000,0,48,0,30000,0)
+var C3C = new unit("C3C","Fax Machine",2000,0,0,12,30000,0)
 
-var C4A = new unit("C4A","VLSI Processor",10000,40,0,0,170000,0)
-var C4B = new unit("C4B","Tape Rack",1000,0,64,0,40000,0)
-var C4C = new unit("C4C","Modem Connection",1000,0,0,16,40000,0)
+var C4A = new unit("C4A","VLSI Processor",30000,40,0,0,170000,0)
+var C4B = new unit("C4B","Tape Rack",3000,0,64,0,40000,0)
+var C4C = new unit("C4C","Modem Connection",3000,0,0,16,40000,0)
 
-var C5A = new unit("C5A","ULSI Processor",10000,80,0,0,330000,0)
-var C5B = new unit("C5B","Disc Folder",1000,0,96,0,50000,0)
-var C5C = new unit("C5C","WiFi Router",1000,0,0,24,50000,0)
+var C5A = new unit("C5A","ULSI Processor",40000,80,0,0,330000,0)
+var C5B = new unit("C5B","Disc Folder",4000,0,96,0,50000,0)
+var C5C = new unit("C5C","WiFi Router",4000,0,0,24,50000,0)
 
-var C6A = new unit("C6A","Multicore Processor",10000,160,0,0,650000,0)
-var C6B = new unit("C6B","SSD Chassis",1000,0,128,0,60000,0)
-var C6C = new unit("C6C","Fiber Connection",1000,0,0,32,60000,0)
+var C6A = new unit("C6A","Multicore Processor",60000,160,0,0,650000,0)
+var C6B = new unit("C6B","SSD Chassis",6000,0,128,0,60000,0)
+var C6C = new unit("C6C","Fiber Connection",6000,0,0,32,60000,0)
 
 era1 = [C1A, C1B, C1C]
 era2 = [C2A, C2B, C2C]
